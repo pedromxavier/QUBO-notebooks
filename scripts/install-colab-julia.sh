@@ -3,8 +3,8 @@
 function install-colab-julia {
     set -e
 
-    JULIA_VERSION="$2" # any version ≥ 0.7.0
-    JULIA_NUM_THREADS=2
+    JULIA_VERSION="$1" # any version ≥ 0.7.0
+    JULIA_NUM_THREADS="$2"
 
     if [ -z `which julia` ]; then
         # Install Julia
