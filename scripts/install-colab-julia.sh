@@ -22,7 +22,10 @@ function install-colab-julia {
 
         # Install kernel and rename it to "julia"
         julia -e '
-        import Pkg; Pkg.activate(); Pkg.add("IJulia");
+        import Pkg;
+        
+        Pkg.activate();
+        Pkg.add("IJulia"; io=devnull);
         
         using IJulia;
 
