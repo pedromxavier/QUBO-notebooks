@@ -27,7 +27,7 @@ function install-colab-julia {
         using IJulia;
 
         IJulia.installkernel(
-            "julia",
+            "Julia",
             env = Dict("JULIA_NUM_THREADS"=>"'"$JULIA_NUM_THREADS"'")
         )'
 
