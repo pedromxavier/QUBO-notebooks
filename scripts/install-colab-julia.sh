@@ -33,7 +33,7 @@ function install-colab-julia {
 
         # Install packages in /content
         Pkg.activate(@__DIR__);
-        Pkg.instantiate();
+        Pkg.instantiate(; io=devnull);
         
         using IJulia;
 
