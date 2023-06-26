@@ -13,6 +13,9 @@ function install-colab-julia {
         
         # -nv means "not verbose"
         wget -nv $JULIA_URL -O /tmp/julia.tar.gz
+
+        # Get Project.toml for installing aditional packages
+        wget -nv "https://raw.githubusercontent.com/pedromxavier/QUBO-notebooks/main/notebooks/Project.toml" -O /content/Project.toml
         
         # Deflate Julia
         tar -x -f /tmp/julia.tar.gz -C /usr/local --strip-components 1
@@ -24,8 +27,13 @@ function install-colab-julia {
         julia -e '
         import Pkg;
         
+        # Install IJulia in global env
         Pkg.activate();
         Pkg.add("IJulia"; io=devnull);
+
+        # Install packages in /content
+        Pkg.activate(@__DIR__);
+        Pkg.instantiate();
         
         using IJulia;
 
@@ -38,7 +46,7 @@ function install-colab-julia {
         KERNEL_NAME=`ls -d "$KERNEL_PATH"/julia*`
         mv -f $KERNEL_NAME "$KERNEL_PATH"/julia
 
-        echo "Successfully installed `julia -v`!"
+        echo "Successfully installed `julia -v` and its packages"
         echo "Please reload this page (press Ctrl+R, ⌘+R, or the F5 key)."
     fi
 
