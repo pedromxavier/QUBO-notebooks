@@ -1,5 +1,6 @@
 [deps]
 AmplNLWriter = "7c4d4715-977e-5154-bfe0-e096adeac482"
+BinaryWrappers = "f01c122e-0ea1-4f85-ad8f-907073ad7a9f"
 Bonmin_jll = "29cba6d7-6840-5cf2-a2fa-9bdfccfe29ea"
 Cbc = "9961bab8-2fa3-5c5a-9d89-47fab24efd76"
 Couenne_jll = "f09e9e23-9010-5c9e-b679-9f1d8f79b85c"
@@ -14,3 +15,4 @@ LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
 Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
 QUBO = "ce8c2e91-a970-4681-856b-16178c24a30c"
 SpecialFunctions = "276daf66-3868-5448-9aa4-cd146d93841b"
+lib4ti2_jll = "1493ae25-0f90-5c0e-a06c-8c5077d6d66f"
